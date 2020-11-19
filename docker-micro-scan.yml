@@ -1,14 +1,12 @@
 version: "3.7"
-
 services:
   hawkscan:
     image: stackhawk/hawkscan:latest
-    command: stackhawk.yml stackhawk-travis.yml
     environment:
       - API_KEY=${HAWK_API_KEY}
-      - APP_ID=${APP_ID}
-      - APP_ENV="${APP_ENV:-Development}"
-      - HOST=${HOST:-http://vuln-proxy:8020}
+      - APP_ID=39991f53-aa24-4b51-996c-fd4a3b477a51
+      - APP_ENV=Pre-Production
+      - HOST=http://vuln-proxy:8020
     volumes:
       - .:/hawk
 
