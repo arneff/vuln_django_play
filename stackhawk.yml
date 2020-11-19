@@ -1,5 +1,5 @@
 app:
-    applicationId: 39991f53-aa24-4b51-996c-fd4a3b477a51
+    applicationId: 066af3b8-6056-4b91-9a62-fb553c8a0ca0
     env: ${APP_ENV:Travis CI}
     host: ${HOST:http://localhost:8020}
     riskLevel: MEDIUM

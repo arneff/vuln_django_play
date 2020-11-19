@@ -24,6 +24,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run Script
+        env: 
+          super_secret: ${{secrets.HAWK_API_KEY}}
         run: scripts/build-and-run.sh
       - name: After Success
         run: docker-compose --file docker-micro.yml --file docker-micro-scan.yml up --abort-on-container-exit
