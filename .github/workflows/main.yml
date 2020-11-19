@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run Script
+      - name: Build and Test
         env: 
           super_secret: ${{secrets.HAWK_API_KEY}}
         run: scripts/build-and-run.sh

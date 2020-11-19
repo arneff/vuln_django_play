@@ -3,7 +3,7 @@
 set -ex
 
 # We'll use this `docker-compose exec` command a lot...
-EXEC_CMD='docker-compose --file docker-micro.yml exec vuln-django'
+EXEC_CMD='docker-compose --file docker-micro.yml exec -T vuln-django'
 
 # Build docker images, in particular the vuln-django container
 docker-compose -f docker-micro.yml build
