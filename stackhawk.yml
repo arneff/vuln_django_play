@@ -1,6 +1,6 @@
 app:
     applicationId: 066af3b8-6056-4b91-9a62-fb553c8a0ca0
-    env: ${APP_ENV:Travis CI}
+    env: ${APP_ENV:Development}
     host: ${HOST:http://localhost:8020}
     riskLevel: MEDIUM
     appDataType: PII
