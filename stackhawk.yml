@@ -1,6 +1,6 @@
 app:
     applicationId: 066af3b8-6056-4b91-9a62-fb553c8a0ca0
-    env: ${APP_ENV:Github-Actions}
+    env: ${APP_ENV:Demo}
     host: ${HOST:http://localhost:8020}
     riskLevel: MEDIUM
     appDataType: PII
@@ -8,28 +8,28 @@ app:
 #     excludePaths:
 #       - /admin/logout/ # the scanner will log itself out if you don't ignore here
 #       - /admin/password_change/
-#     authentication:
-#       loggedInIndicator: "\\QLog Out\\E"
-#       loggedOutIndicator: "\\Qlogin-form\\E"
-#       testPath:
-#         path: /admin/auth/user/
-#         type: HEADER
-#         success: ".*200.*"
-#       cookieAuthorization:
-#         cookieNames:
-#           - "token"
-#           - "csrftoken"
-#       usernamePassword:
-#         type: FORM
-#         loginPath: /admin/login/
-#         logoutPath: /admin/logout/
-#         usernameField: username
-#         passwordField: password
-#         otherParams:
-#           - name: next  # The login form parameter is needed to make login work
-#             val: "/admin/"
-#         scanUsername: admin # You created this user with the 'createsuperuser' command. Enter that info here
-#         scanPassword: adminpassword
+    # authentication:
+    #   loggedInIndicator: "\\QLog Out\\E"
+    #   loggedOutIndicator: "\\Qlogin-form\\E"
+    #   testPath:
+    #     path: /admin/auth/user/
+    #     type: HEADER
+    #     success: ".*200.*"
+    #   cookieAuthorization:
+    #     cookieNames:
+    #       - "token"
+    #       - "csrftoken"
+    #   usernamePassword:
+    #     type: FORM
+    #     loginPath: /admin/login/
+    #     logoutPath: /admin/logout/
+    #     usernameField: username
+    #     passwordField: password
+    #     otherParams:
+    #       - name: next  # The login form parameter is needed to make login work
+    #         val: "/admin/"
+    #     scanUsername: admin # You created this user with the 'createsuperuser' command. Enter that info here
+    #     scanPassword: adminpassword
 hawk:
  # Web crawler / spider configuration
  spider:
