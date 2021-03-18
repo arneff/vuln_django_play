@@ -1,43 +1,64 @@
+# 1. Install Docker
+# 2. Running Application
+# 3. Create & Store Your StackHawk API KEY
+# 4. Obtain a StackHawk Application ID
+# 5. Configure and Save the stackhawk.yml file in your project directory
+# 6. Docker run command
+
 app:
-    applicationId: 066af3b8-6056-4b91-9a62-fb553c8a0ca0
-    env: ${APP_ENV:Demo}
-    host: ${HOST:http://localhost:8020}
-    riskLevel: MEDIUM
-    appDataType: PII
-    antiCsrfParam: csrfmiddlewaretoken
-#     excludePaths:
-#       - /admin/logout/ # the scanner will log itself out if you don't ignore here
-#       - /admin/password_change/
-    # authentication:
-    #   loggedInIndicator: "\\QLog Out\\E"
-    #   loggedOutIndicator: "\\Qlogin-form\\E"
-    #   testPath:
-    #     path: /admin/auth/user/
-    #     type: HEADER
-    #     success: ".*200.*"
-    #   cookieAuthorization:
-    #     cookieNames:
-    #       - "token"
-    #       - "csrftoken"
-    #   usernamePassword:
-    #     type: FORM
-    #     loginPath: /admin/login/
-    #     logoutPath: /admin/logout/
-    #     usernameField: username
-    #     passwordField: password
-    #     otherParams:
-    #       - name: next  # The login form parameter is needed to make login work
-    #         val: "/admin/"
-    #     scanUsername: admin # You created this user with the 'createsuperuser' command. Enter that info here
-    #     scanPassword: adminpassword
+    applicationId: 6b2d6075-1882-4355-9c87-5cb77d52bd98
+    env: Development
+    host: http://localhost:8020
+
+#  # The name of your anti csrf parameter
+    antiCsrfParam: csrfmiddlewaretoken # (optional)
+    excludePaths:
+      - /admin/logout/ # the scanner will log itself out if you don't ignore here
+      - /admin/password_change/
+    authentication:
+    #    # A regex to match against http responses to determine if the scan user is
+    #    # still logged in to your app
+      loggedInIndicator: "\\QLog Out\\E" # (required)
+    #    # A regex to match against http responses to determine if the scan user is
+    #    # logged out of your app
+      loggedOutIndicator: "\\Qlogin-form\\E" # (required)
+    #   # A page that is only accessible being logged in. We will try to access this page
+    #   # to validate authentication worked
+      testPath:
+        path: /admin/auth/user/
+        type: HEADER
+        success: ".*200.*"
+    #   # What kind of thing will the browser pass to the server to prove it's logged in
+      cookieAuthorization:
+        cookieNames:
+          - "token"
+          - "csrftoken"
+      usernamePassword:
+        type: FORM # (optional)
+    #    # The route to a form POST to authenticate a user
+        loginPath: /admin/login/ # (required)
+    #    # The route to logout a user
+        logoutPath: /admin/logout/ # (required)
+    #    # The username field name in your authentication form
+        usernameField: username # (required)
+    #    # The password field name in your authentication form.
+        passwordField: password # (required)
+    #    # Other parameters that may be required by your log in form
+        otherParams: # (optional)
+          - name: next  # The login form parameter is needed to make login work
+            val: "/admin/"
+    #    # The username to authenticate as when scanning
+        scanUsername: admin # (required)
+    #    # The password of the scanUsername
+        scanPassword: adminpassword # (required)
 hawk:
- # Web crawler / spider configuration
- spider:
-   # Enable the base spider for discovering your app's routes
-   base: true # (default)
-   # Enable the ajax spider for discovering your single page app
-   ajax: true # (default)
-   # Maximum time for spider to discover routes in your app
-   maxDurationMinutes: 2 # (default)
- # Maximum time to wait for the scanner to start up
- startupTimeoutMinutes: 5 # (default)
+#  # Web crawler / spider configuration
+spider:
+#    # Enable the base spider for discovering your app's routes
+  base: true # (default)
+#    # Enable the ajax spider for discovering your single page app
+#    ajax: false # (default)
+#    # Maximum time for spider to discover routes in your app
+#    maxDurationMinutes: 2 # (default)
+#  # Maximum time to wait for the scanner to start up
+#  startupTimeoutMinutes: 5 # (default)

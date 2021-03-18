@@ -1,0 +1,49 @@
+app:
+    applicationId: 066af3b8-6056-4b91-9a62-fb553c8a0ca0
+    env: ${APP_ENV:Pre-Production(A)}
+    host: ${HOST:http://localhost:8020}
+    riskLevel: MEDIUM
+    appDataType: PII
+    antiCsrfParam: csrfmiddlewaretoken
+    # authentication:
+    #   loggedInIndicator: "\\QLog Out\\E"
+    #   loggedOutIndicator: "\\Qlogin-form\\E"
+    #   testPath:
+    #     path: /admin/auth/user/
+    #     type: HEADER
+    #     success: ".*200.*"
+    #   cookieAuthorization:
+    #     cookieNames:
+    #       - "token"
+    #       - "csrftoken"
+    #   usernamePassword:
+    #     type: FORM
+    #     loginPath: /admin/login/
+    #     logoutPath: /admin/logout/
+    #     usernameField: username
+    #     passwordField: password
+    #     otherParams:
+    #       - name: next  # The login form parameter is needed to make login work
+    #         val: "/admin/"
+    #     scanUsername: admin # You created this user with the 'createsuperuser' command. Enter that info here
+    #     scanPassword: adminpassword
+# hawk:
+#  # Web crawler / spider configuration
+#  spider:
+#    # Enable the base spider for discovering your app's routes
+#    base: true # (default)
+#    # Enable the ajax spider for discovering your single page app
+#    ajax: false # (default)
+#    # Maximum time for spider to discover routes in your app
+#    maxDurationMinutes: 2 # (default)
+#  # Maximum time to wait for the scanner to start up
+#  startupTimeoutMinutes: 5 # (default)
+# hawkAddOn:
+#   replacer:
+#     rules:
+#       - matchString: "User-Agent"
+#         replacement: "Aaron Neff"
+#         replaceOnly: true
+#       - matchString: "X-HEADER-INJECT"
+#         replacement: "Inject value"
+#         replaceOnly: false

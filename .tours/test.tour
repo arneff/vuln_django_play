@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "test",
+  "steps": [
+    {
+      "title": "Basic Scan",
+      "description": "",
+      "line": 2
+    },
+    {
+      "file": "../../../../../Downloads/stackhawk (11).yml",
+      "description": "Basic scan test",
+      "line": 9
+    },
+    {
+      "file": "../../../../../Downloads/stackhawk (11).yml",
+      "description": "stsetssdfs",
+      "line": 20
+    }
+  ],
+  "ref": "e4eb1893374fcedd2fbaafcaf4fd6fffa80b935c"
+}

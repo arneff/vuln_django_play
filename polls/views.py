@@ -7,6 +7,10 @@ from django.db import connection
 from urllib.parse import unquote
 from django.views.decorators.csrf import csrf_exempt
 from .models import Choice, Question
+from rest_framework_swagger.renderers import OpenAPIRenderer, SwaggerUIRenderer
+from rest_framework.decorators import api_view, renderer_classes
+from rest_framework import response, schemas
+
 
 
 class IndexView(generic.ListView):
@@ -107,3 +111,9 @@ def sql_injector(request, ):
 def search(request, ):
     search_str = request.POST.get('search_string', 'found nothing in search')
     return render(request, 'polls/search_detail.html', {'search_string': search_str,})
+
+@api_view()
+@renderer_classes([SwaggerUIRenderer, OpenAPIRenderer])
+def schema_view(request):
+    generator = schemas.SchemaGenerator(title='Pastebin API')
+    return response.Response(generator.get_schema(request=request))

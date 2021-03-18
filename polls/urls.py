@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 
+
+
 app_name = 'polls'
 urlpatterns = [
     # ex /polls/
@@ -19,5 +21,6 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     # ex /polls/injector/
     path('<str:injector_str>/', views.inject, name='inject'),
+    path('api/swagger/', views.schema_view, name='swagger'),
 
 ]

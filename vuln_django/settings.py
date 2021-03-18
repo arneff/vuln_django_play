@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_seed',
+    'rest_framework_swagger',
+
+
 ]
+
 
 MIDDLEWARE = [
     'request_logging.middleware.LoggingMiddleware',
