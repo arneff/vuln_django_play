@@ -52,7 +52,7 @@ app:
     #    # The password of the scanUsername
         scanPassword: adminpassword # (required)
 hawk:
-  failureThreshold: high
+  # failureThreshold: high
 #  # Web crawler / spider configuration
   spider:
 #    # Enable the base spider for discovering your app's routes
