@@ -8,7 +8,7 @@
 app:
     applicationId: 6b2d6075-1882-4355-9c87-5cb77d52bd98
     env: Development
-    host: http://localhost:8020
+    host: ${HOST:http://localhost:8020}
 
 #  # The name of your anti csrf parameter
     antiCsrfParam: csrfmiddlewaretoken # (optional)
@@ -52,7 +52,7 @@ app:
     #    # The password of the scanUsername
         scanPassword: adminpassword # (required)
 hawk:
-  # failureThreshold: high
+  failureThreshold: high
 #  # Web crawler / spider configuration
   spider:
 #    # Enable the base spider for discovering your app's routes
