@@ -52,10 +52,11 @@ app:
     #    # The password of the scanUsername
         scanPassword: adminpassword # (required)
 hawk:
+  failureThreshold: high
 #  # Web crawler / spider configuration
-spider:
+  spider:
 #    # Enable the base spider for discovering your app's routes
-  base: true # (default)
+    base: true # (default)
 #    # Enable the ajax spider for discovering your single page app
 #    ajax: false # (default)
 #    # Maximum time for spider to discover routes in your app
